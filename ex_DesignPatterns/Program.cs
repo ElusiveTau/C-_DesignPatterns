@@ -15,11 +15,10 @@ namespace ex_DesignPatterns
             var invoker = new Invoker();
             var thorbot = new Robot("Thor");
 
+            thorbot.Move(Robot.Direction.Down, 5);
 
             Console.ReadKey();
         }
-        
-
     }
 
     // Another receiver
@@ -36,10 +35,10 @@ namespace ex_DesignPatterns
             set => _name = value;
         }
 
-        public Robot(string name, int maxmoves=100)
+        public Robot(string name, int maxMoves=100)
         {
             Name = name;
-            MoveLimit = maxmoves;
+            MoveLimit = maxMoves;
         }
 
         public int MoveLimit
@@ -48,10 +47,11 @@ namespace ex_DesignPatterns
             set => _moveLimit = value;
         }
 
-        public void Move(Direction moveDirection, int )
+        public void Move(Direction moveDirection, int movementvalue)
         {
-            Console.WriteLine($"{Name}: Move<{moveDirection}, {numberTiles}>");
-            _movementValue -= numberTiles;
+            Console.WriteLine($"{Name}: Move<{moveDirection}, {movementvalue}>");
+            MoveLimit -= movementvalue;
         }
     }
+
 }
