@@ -30,7 +30,6 @@ namespace Command
         }
     }
 
-
     public class Invoker
     {
         public CommandBase Command { get; set; }
@@ -61,7 +60,6 @@ namespace Command
 
         public abstract void Execute();
     }
-
 
     public class ConcreteCommand : CommandBase
     {
